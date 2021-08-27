@@ -11,30 +11,37 @@ services:
     volumes:
       - ./shared-folder:/shared-folder
 
-  web:
+  web01:
     build:
       context: .
       dockerfile: Dockerfile
       target: ansible-host
-    hostname: web
+    hostname: web01
 
-  db:
+  web02:
     build:
       context: .
       dockerfile: Dockerfile
       target: ansible-host
-    hostname: db
-  
-  gateway:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: ansible-host
-    hostname: gateway
+    hostname: web02
 
-  test:
+  api:
     build:
       context: .
       dockerfile: Dockerfile
       target: ansible-host
-    hostname: test
+    hostname: api
+
+  db-data:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: db-data
+
+  db-cache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: db-cache
