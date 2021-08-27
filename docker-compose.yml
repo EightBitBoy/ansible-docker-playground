@@ -1,26 +1,40 @@
 version: "3.8"
 services:
+
   ansible:
-    image: shellwhale/ansible
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-controller
     hostname: ansible
     tty: true
     volumes:
       - ./shared-folder:/shared-folder
-    build:
-      context: .
-      dockerfile: Dockerfile.ansible
+
   web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
     hostname: web
-    ports:
-      - "999:999"
-    image: shellwhale/centos
-    build:
-      context: .
-      dockerfile: Dockerfile.centos
+
   db:
-    hostname: db
-    image: shellwhale/centos
     build:
       context: .
-      dockerfile: Dockerfile.centos
-      
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: db
+  
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: gateway
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: test
