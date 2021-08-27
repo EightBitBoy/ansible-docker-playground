@@ -9,7 +9,7 @@ services:
     hostname: ansible
     tty: true
     volumes:
-      - ./shared-folder:/shared-folder
+      - ./ansible:/ansible
 
   web01:
     build:
