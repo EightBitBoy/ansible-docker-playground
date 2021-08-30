@@ -24,6 +24,20 @@ services:
       dockerfile: Dockerfile
       target: ansible-host
     hostname: web02
+  
+  web03:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: web03
+
+  web04:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ansible-host
+    hostname: web04
 
   api:
     build:
