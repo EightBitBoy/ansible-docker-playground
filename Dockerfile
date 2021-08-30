@@ -20,3 +20,5 @@ ENTRYPOINT [ "/bin/bash" ]#
 FROM sickp/centos-sshd as ansible-host
 COPY id_rsa.pub /root/.ssh/authorized_keys
 RUN chmod 400 /root/.ssh/authorized_keys
+
+RUN sed -i 's/#LogLevel INFO/LogLevel VERBOSE/' /etc/ssh/sshd_config

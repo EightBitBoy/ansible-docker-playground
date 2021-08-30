@@ -1,18 +1,26 @@
 # ansible-docker-playground
-A simple 3 containers ansible playground
-![project image](https://i.imgur.com/jwf0hv9.png)
+
+This is a fork of https://github.com/shellwhale/ansible-docker-playground.
+
+## Requirements
+* A working docker installation.
+
+## Starting the containers
+* Clone the repository.
+* Open the repository folder in a shell or command line window.
+* Execute the command `docker-compose up`.
+
+## Connecting to the ansible control node
+
+## Example Commands
+* ansible all -m ping
+* ansible all -a "/bin/echo hello"
+
+## Hints
+* 
 
 Start the containers by running the following snippet in your terminal :
 
-```bash
-git clone https://github.com/shellwhale/ansible-docker-playground
-cd ansible-docker-playground
-docker-compose build # Build the containers
-docker-compose up # Start the containers
-```
-The containers ansible, web and db are now running the background
-
-⚠ In a second terminal, run this second snippet to access the ansible-enabled container (named as "ansible" within the network) 
 
 ```bash
 docker exec -it ansible-docker-playground_ansible_1 /bin/bash
@@ -36,3 +44,8 @@ If you do any change to the Dockerfiles, don't forget to build the containers ag
 ```bash
 docker-compose build
 ```
+
+
+## Excample Commands
+ansible all -m ping
+ansible all -a "/bin/echo hello"
