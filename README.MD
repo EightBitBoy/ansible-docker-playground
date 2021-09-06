@@ -49,3 +49,6 @@ docker-compose build
 ## Excample Commands
 ansible all -m ping
 ansible all -a "/bin/echo hello"
+
+## Execute playbook
+ansibe-playbook file.yml
