@@ -1,6 +1,4 @@
 ---
 - name: Get the current user
-  tasks:
-    - name: Get the current user
-      raw: whoami
-      changed_when: false
+  raw: whoami
+  changed_when: false
