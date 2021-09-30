@@ -8,7 +8,10 @@ RUN apt-add-repository --yes --update ppa:ansible/ansible
 RUN apt-get install -y ansible \
     iputils-ping \
     python-apt \
+    python-pip \
     nano
+
+RUN pip install pywinrm
 
 ADD id_rsa /root/.ssh/
 RUN chmod 400 /root/.ssh/id_rsa
