@@ -1,7 +1,7 @@
 version: "3.8"
 services:
 
-  ansible:
+  control-node:
     build:
       context: .
       dockerfile: Dockerfile
