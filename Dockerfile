@@ -6,7 +6,9 @@ RUN apt-get install -y software-properties-common
 RUN apt-add-repository --yes --update ppa:ansible/ansible
 
 RUN apt-get install -y ansible \
+    curl \
     iputils-ping \
+    jq \
     nano \
     python-apt \
     python-pip
