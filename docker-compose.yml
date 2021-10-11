@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: ansible-controller
-    hostname: ansible
+    hostname: control-node
     tty: true
     volumes:
       - ./ansible:/ansible
